@@ -1,0 +1,11 @@
+
+<form *ngIf="error==false" (submit)="iniciarsesion()" method="post">
+    <fieldset>
+        <legend>Nuevo usuario</legend>
+        <input type="text" (focus)="limpiarNombre()" [(ngModel)]="nuevo.nombre" name="nuevo.nombre" placeholder="Nombre">
+        <input type="password"(focus)="limpiarPassword()" [(ngModel)]="nuevo.password" name="nuevo.password" placeholder="Contraseña">
+        <button type="submit" class="btn btn-success">ingresar</button>
+    </fieldset>
+</form>
+<h1 *ngIf="error==true">usuario y/o Contraseña incorrectos</h1>
+<button *ngIf="error==true" (click)="reset()" class="btn btn-success">Volver a ingresar</button>
