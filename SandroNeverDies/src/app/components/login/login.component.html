@@ -1,0 +1,72 @@
+<!-- <p>login works!</p> -->
+<div class="wrapper" style="background-image: url('assets/media/inicio-registro/rosas_hd.jpg');">
+    <div class="inner">
+        <div class="image-holder">
+            <img src="assets/media/inicio-registro/sandro2.jpg" alt="room">
+        </div>
+        <form action="">
+            <h3>Iniciar Sesion</h3>
+            <div class="form-wrapper">
+                <a routerLink="../../usuarios/usuario-registro"><p style="color: black;">"¿Es tu primera vez"</p><p style="color: blue;">Registrate</p></a>
+            </div>
+            <h3></h3>
+<!--             
+            <div class="form-wrapper">
+                <input type="text" [(ngModel)]="nuevo.nombre" name="nuevo.nombre" placeholder="Email" class="form-control">
+                <i class="zmdi zmdi-email"></i>
+            </div> -->
+            <div class="form-wrapper">
+                <input type="text" [(ngModel)]="usuario.email" name="usuario.email" placeholder="Email" class="form-control">
+                <i class="zmdi zmdi-email"></i>
+            </div>
+            <div style="background-color: whitesmoke;">
+                <div [ngSwitch]="errorEmail">
+                    <!-- <h5 *ngIf="errorNombre > 0" style="color: red;"><u>Error en el Nombre</u></h5> -->
+                    <div *ngSwitchCase="1"><p style="color: red;">Deben completar el campo Email</p></div>
+                    <div *ngSwitchCase="2"><p style="color: red;">Email muy largo, debe tener menos de 50 caracteres</p></div>
+                    <div *ngSwitchCase="3"><p style="color: red;">Email debe tener un formato correcto</p></div>
+                </div>     
+            </div>     
+        
+            <div class="form-wrapper">
+                <input type="password" [(ngModel)]="usuario.contrasenia" name="usuario.contrasenia" placeholder="Contraseña" class="form-control">
+                <i class="zmdi zmdi-lock"></i>
+            </div>            
+            <div style="background-color: whitesmoke;">
+                <div [ngSwitch]="errorPassword">
+                    <!-- <h5 *ngIf="errorPassword > 0" style="color: red;"><u>Error en la Contraseña</u></h5> -->
+                    <div *ngSwitchCase="1"><p style="color: red;">Deben completar el campo Contraseña</p></div>
+                    <div *ngSwitchCase="2"><p style="color: red;">Contraseña debe tener 8 caracteres</p></div>
+                    <div *ngSwitchCase="3"><p style="color: red;">Contraseña debe tener 8 caracteres y al menos uno de estos: Mayuscula - Minuscula - Numero - Caracter Especial</p></div>
+                </div>
+                <div [ngSwitch]="errorLogin">
+                    <!-- <h5 *ngIf="errorLogin > 0" style="color: red;"><u>Error en el Login</u></h5> -->
+                    <div *ngSwitchCase="1"><p style="color: red;">No existe ningun usuario que coincida con el Email y Contraseña</p></div>
+                    <div *ngSwitchCase="2"><p style="color: red;">El Usuario fue bloqueado debido a múltiples intentos fallidos</p></div>
+                </div>       
+            </div>
+
+            <div class="form-wrapper">
+                <p style="color: black;">¿Olvidaste la Contraseña?</p>
+            </div>
+            <button (click)="login()" type="button">
+                <!-- <a href="../../online-shop-website-template/index.html" style=" color: white;"> 
+                    Iniciar sesion <i class="zmdi zmdi-arrow-right"></i>
+                </a> -->
+                    <p style=" color: white;">Iniciar sesion <i class="zmdi zmdi-arrow-right"></i></p>
+            </button>
+        </form>
+        <!-- PRUEBA -->
+        <!-- <div *ngIf="usuarios.length > 0; else mensaje">
+            <div *ngFor="let usuario of usuarios">
+                <p>{{ usuario.usuario }} - {{ usuario.rol }}</p>
+            </div>
+        </div>
+        <ng-template #mensaje>
+            <p>No existe ningun usuario en la Base de Datos</p>
+        </ng-template> -->
+    </div>
+
+</div>
+
+<!-- Fuente - Iconos -->
