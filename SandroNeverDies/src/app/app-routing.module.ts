@@ -9,6 +9,15 @@ import { DetailComponent } from "./components/detail/detail.component";
 import { CartComponent } from "./components/cart/cart.component";
 import { CheckoutComponent } from "./components/checkout/checkout.component";
 import { ContactComponent } from "./components/contact/contact.component";
+import { AbmproductosComponent } from './components/ABM/abmproductos/abmproductos.component';
+import { AbmcategoriasComponent } from './components/ABM/abmcategorias/abmcategorias.component';
+import { AbmempleadosComponent } from './components/ABM/abmempleados/abmempleados.component';
+import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component';
+import { ClientesdestacadosComponent } from './components/informes/clientesdestacados/clientesdestacados.component';
+/*import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component';
+import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component';
+import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component'; */
+
 // ContactComponent
 const routes: Routes = [
 	{
@@ -52,6 +61,22 @@ const routes: Routes = [
 		path: 'usuarios/contact',
 		component: ContactComponent
 	},
+	{ path: 'abm/abmproductos', 
+		component: AbmproductosComponent 
+	},
+	{ path: 'abm/abmcategorias', 
+		component: AbmcategoriasComponent 
+	},
+	{ path: 'abm/abmempleados',
+		component: AbmempleadosComponent
+	},
+	{ path: 'abm/abmclientes',
+		component: AbmclientesComponent
+	},
+	{ path: 'informes/clientesdestacados',
+		component: ClientesdestacadosComponent
+	},
+	
 ];
 
 @NgModule({
