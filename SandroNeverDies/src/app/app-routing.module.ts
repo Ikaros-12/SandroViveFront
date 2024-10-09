@@ -14,11 +14,14 @@ import { AbmcategoriasComponent } from './components/ABM/abmcategorias/abmcatego
 import { AbmempleadosComponent } from './components/ABM/abmempleados/abmempleados.component';
 import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component';
 import { ClientesdestacadosComponent } from './components/informes/clientesdestacados/clientesdestacados.component';
+import { DevolucionesyreembolsosComponent } from './components/informes/devolucionesyreembolsos/devolucionesyreembolsos.component';
+import { MayoresventasComponent } from './components/informes/mayoresventas/mayoresventas.component';
+import { MenoresventasComponent } from './components/informes/menoresventas/menoresventas.component';
+import { VentasporperiodoComponent } from './components/informes/ventasporperiodo/ventasporperiodo.component';
 /*import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component';
 import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component';
 import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component'; */
 
-// ContactComponent
 const routes: Routes = [
 	{
 		path: '',
@@ -75,6 +78,18 @@ const routes: Routes = [
 	},
 	{ path: 'informes/clientesdestacados',
 		component: ClientesdestacadosComponent
+	},
+	{ path: 'informes/devolucionesyreembolsos',
+		component: DevolucionesyreembolsosComponent
+	},
+	{ path: 'informes/mayoresventas',
+		component: MayoresventasComponent
+	},
+	{ path: 'informes/menoresventas',
+		component: MenoresventasComponent
+	},
+	{ path: 'informes/ventasporperiodo',
+		component: VentasporperiodoComponent
 	},
 	
 ];
