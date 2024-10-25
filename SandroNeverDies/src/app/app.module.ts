@@ -25,6 +25,7 @@ import { VentasporperiodoComponent } from './components/informes/ventasporperiod
 import { DevolucionesyreembolsosComponent } from './components/informes/devolucionesyreembolsos/devolucionesyreembolsos.component';
 import { ClientesdestacadosComponent } from './components/informes/clientesdestacados/clientesdestacados.component';
 import { MayoresventasComponent } from './components/informes/mayoresventas/mayoresventas.component';
+import { DevolucionesComponent } from './components/devoluciones/devoluciones.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { MayoresventasComponent } from './components/informes/mayoresventas/mayo
     MayoresventasComponent,
     VentasporperiodoComponent,
     DevolucionesyreembolsosComponent,
-    ClientesdestacadosComponent
+    ClientesdestacadosComponent,
+    DevolucionesComponent
   ],
   imports: [
     BrowserModule,

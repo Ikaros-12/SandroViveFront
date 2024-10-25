@@ -18,9 +18,11 @@ import { DevolucionesyreembolsosComponent } from './components/informes/devoluci
 import { MayoresventasComponent } from './components/informes/mayoresventas/mayoresventas.component';
 import { MenoresventasComponent } from './components/informes/menoresventas/menoresventas.component';
 import { VentasporperiodoComponent } from './components/informes/ventasporperiodo/ventasporperiodo.component';
+import { DevolucionesComponent } from './components/devoluciones/devoluciones.component';
 /*import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component';
 import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component';
 import { AbmclientesComponent } from './components/ABM/abmclientes/abmclientes.component'; */
+
 
 const routes: Routes = [
 	{
@@ -90,6 +92,9 @@ const routes: Routes = [
 	},
 	{ path: 'informes/ventasporperiodo',
 		component: VentasporperiodoComponent
+	},
+	{ path: 'usuarios/devoluciones',
+		component: DevolucionesComponent
 	},
 	
 ];
