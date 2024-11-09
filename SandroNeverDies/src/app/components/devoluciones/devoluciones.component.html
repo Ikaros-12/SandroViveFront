@@ -261,6 +261,91 @@
 
     <!-- Contact Start -->
     <div class="container-fluid">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
+            <span class="bg-secondary pr-3">Formulario de Reclamo</span>
+        </h2>
+        <div class="row px-xl-5">
+            <div class="col-lg-7 mb-5">
+                <div class="contact-form bg-light p-30">
+                    <form id="contactForm" novalidate="novalidate">
+                        <div class="control-group">
+                            <label for="nombreCliente">Juan Perez</label>                            
+                        </div>
+                        <br>
+                        <div class="control-group">
+                            <label for="pedido">Seleccionar Pedido</label>
+                            <select class="form-control" id="pedido" name="pedido" required>
+                                <option value="" disabled selected>Seleccione un pedido</option>
+                                <option value="pedido1">Pedido 1</option>
+                                <option value="pedido2">Pedido 2</option>
+                                <option value="pedido3">Pedido 3</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="control-group">
+                            <label for="producto">Seleccionar Producto</label>
+                            <select class="form-control" id="producto" name="producto" required>
+                                <option value="" disabled selected>Seleccione un producto</option>
+                                <option value="producto1">Remera Mujer Manga Corta</option>
+                                <option value="producto2">Taza Rosa</option>
+                                <option value="producto3">Llavero Dame Fuego</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="control-group">
+                            <label for="cantidad">Seleccionar Cantidad</label>
+                            <select class="form-control" id="cantidad" name="cantidad" required>
+                                <option value="" disabled selected>Seleccione una cantidad</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="control-group">
+                            <label for="motivo">Seleccionar Motivo</label>
+                            <select class="form-control" id="motivo" name="motivo" required>
+                                <option value="" disabled selected>Seleccione un motivo</option>
+                                <option value="motivo1">Producto Defectuoso</option>
+                                <option value="motivo2">Talle Incorrecto</option>
+                                <option value="motivo3">Producto Faltante/No entregado</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="control-group">
+                            <label for="foto">Adjuntar Imagen</label>
+                            <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
+                        </div>
+                        <br>
+                        <div class="control-group">
+                            <textarea class="form-control" rows="8" id="message" placeholder="Observaciones" required></textarea>
+                        </div>
+                        <br>
+                        <div>
+                            <button class="btn btn-primary py-2 px-4" type="button" onclick="limpiarCampos()">
+                                Iniciar Reclamo
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function limpiarCampos() {
+            // Limpiar los campos seleccionados
+            document.getElementById('pedido').selectedIndex = 0;
+            document.getElementById('producto').selectedIndex = 0;
+            document.getElementById('cantidad').selectedIndex = 0;
+            document.getElementById('motivo').selectedIndex = 0;
+            document.getElementById('message').value = ''; // Limpiar textarea
+        }
+    </script>
+    
+    
+    <!-- <div class="container-fluid">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Formulario de Reclamo</span></h2>
         <div class="row px-xl-5">
             <div class="col-lg-7 mb-5">
@@ -297,7 +382,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Contact End -->
      
 
