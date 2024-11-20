@@ -213,16 +213,16 @@
                             </div> -->
                             <!-- <a routerLink="checkout.html" class="nav-item nav-link">Detalles de Envio</a> -->
                             <a routerLink="../../usuarios/contact" class="nav-item nav-link">Contacto</a>
-                            <a routerLink="../../usuarios/contact" class="nav-item nav-link">Devoluciones</a>
+                            <a routerLink="../../usuarios/devoluciones" class="nav-item nav-link">Reclamos</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Informes<i
                                         class="fa fa-angle-down mt-1"></i></a>
                                 <div class="dropdown-menu bg-primary rounded-0 border-0 m-0 ">
-                                    <a routerLink="alta de producto(menores Ventas).html" class="dropdown-item">Informe Menores Ventas</a>
-                                    <a routerLink="alta de producto(menores Ventas).html" class="dropdown-item">Informe Mayores Ventas</a>
-                                    <a routerLink="alta de producto(menores Ventas).html" class="dropdown-item">Informe de Ventas por Período</a>
-                                    <a routerLink="alta de producto(menores Ventas).html" class="dropdown-item">Informe Devoluciones y Reembolsos</a>
-                                    <a routerLink="alta de producto(menores Ventas).html" class="dropdown-item">Informe Clientes Destacados</a>
+                                    <a routerLink="../../informes/menoresventas" class="dropdown-item">Informe Menores Ventas</a>
+                                    <a routerLink="../../informes/mayoresventas" class="dropdown-item">Informe Mayores Ventas</a>
+                                    <a routerLink="../../informes/ventasporperiodo" class="dropdown-item">Informe de Ventas por Período</a>
+                                    <a routerLink="../../informes/devolucionesyreembolsos" class="dropdown-item">Informe Devoluciones y Reembolsos</a>
+                                    <a routerLink="../../informes/clientesdestacados" class="dropdown-item">Informe Clientes Destacados</a>
                                 </div>
                             </div>
                         </div>
@@ -261,6 +261,73 @@
 
         <!-- Contact Start -->
         <div class="container-fluid">
+            <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
+                <span class="bg-secondary pr-3">Informe de Productos Menos Vendidos</span>
+            </h2>
+            <div class="row px-xl-5">
+                <div class="col-lg-7 mb-5">
+                    <div class="contact-form bg-light p-30">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">                            
+                            <div class="form-row">                                
+                                <div class="control-group col-md-5">
+                                    <label for="Fecha desde">Fecha desde:</label>
+                                    <input type="date" class="form-control" id="Fechadesde" [(ngModel)]="filtro.fecha_desde" name="filtro.fecha_desde" required="required" data-validation-required-message="Por favor, seleccione una fecha">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group col-md-5">
+                                    <label for="Fecha desde">Fecha hasta:</label>
+                                    <input type="date" class="form-control" id="Fechahasta" [(ngModel)]="filtro.fecha_hasta" name="filtro.fecha_hasta" required="required" data-validation-required-message="Por favor, seleccione una fecha">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group mt-3">
+                                <button class="btn btn-primary py-2 px-4" (click)="MenoresVentasPorPeriodo()" type="submit" id="altaButton">Buscar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="container-fluid">
+            <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
+                <span class="bg-secondary pr-3">Lista de Productos Menos Vendidos</span>
+            </h2>
+            <div class="row px-xl-5">
+                <div class="col-lg-7 mb-5">
+                    <div class="contact-form bg-light p-30">
+                        <div id="success"></div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nro Producto</th>
+                                    <th>Nombre Producto</th>
+                                    <th>Total Vendido</th>
+                                    <th>Monto total</th>
+                                    <th>Observaciones</th>                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let producto of menoresventas_por_periodo">                                    
+                                    <td style="text-align: center;">{{producto.producto_id}}</td>
+                                    <td style="text-align: center;">{{producto.producto_nombre}}</td>
+                                    <td style="text-align: center;">{{producto.total_vendido}}</td>
+                                    <td style="text-align: center;">{{producto.total_vendido * 5000}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div *ngIf="menoresventas_por_periodo.length > 0" class="control-group">
+                            <!-- <button class="btn btn-primary py-2 px-4" type="button" id="saveChangesButton">Descargar Excel</button> -->
+                            <button class="btn btn-primary py-2 px-4" type="button" (click)="ExportarExcel()">Descargar Excel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <!-- <div class="container-fluid">
             <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
                 <span class="bg-secondary pr-3">Informe de Productos Menos Vendidos</span>
             </h2>
@@ -345,7 +412,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!-- Footer Start -->
